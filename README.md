@@ -1,2 +1,2 @@
 # Leetcode
-Solvinf Leetcode problems
+SolvingLeetcode problems
