@@ -1,2 +1,5 @@
 # Leetcode
-SolvingLeetcode problems
+Solving Leetcode problems
+
+### Arrays
+- Two Sum
