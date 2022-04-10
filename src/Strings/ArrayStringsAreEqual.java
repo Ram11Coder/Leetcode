@@ -30,7 +30,7 @@ public class ArrayStringsAreEqual {
 	}
 
 	public static boolean arrayStringsAreEqualWithJoins(String[] word1, String[] word2) {
-		return (String.join("", word1).equals(String.join("", word2))) ? true : false;
+		return String.join("", word1).equals(String.join("", word2));
 
 	}
 }
