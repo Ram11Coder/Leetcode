@@ -10,7 +10,7 @@ System.out.println(new JewelsandStones().numJewelsInStonesTest("aA",  "aAAbbbb")
 }
 
 	public int numJewelsInStones(String jewels, String stones) {
-
+		
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 
 		for (char c : stones.toCharArray()) {
