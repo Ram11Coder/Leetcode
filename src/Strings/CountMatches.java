@@ -1,12 +1,16 @@
 package Strings;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CountMatches {
 	public static void main(String[] args) {
-		List<List<String>>
-System.out.println(countMatches(,"type", "phone"));
+		List<List<String>> list = Arrays.asList(Arrays.asList("phone", "blue", "pixel"),
+				Arrays.asList("computer", "silver", "phone"), Arrays.asList("phone", "gold", "iphone"));
+		System.out.println(countMatches(list, "type", "phone"));
+		System.out.println(countMatches(list, "color", "silver"));
+	
 	}
 
 	public static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
