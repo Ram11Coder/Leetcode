@@ -8,14 +8,28 @@ public class CountMatches {
 	public static void main(String[] args) {
 		List<List<String>> list = Arrays.asList(Arrays.asList("phone", "blue", "pixel"),
 				Arrays.asList("computer", "silver", "phone"), Arrays.asList("phone", "gold", "iphone"));
-		System.out.println(countMatches(list, "type", "phone"));
+		System.out.println(countMatchesWithEfficient(list, "type", "phone"));
 		System.out.println(countMatches(list, "color", "silver"));
-	
+
 	}
 
-	public static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+	public static int countMatchesWithEfficient(List<List<String>> items, String ruleKey, String ruleValue) {
 		int count = 0;
 
+		for (List<String> list : items) {
+			if (ruleKey.equals("type") && ruleValue.equals(list.get(0)))
+				count++;
+			if (ruleKey.equals("color") && ruleValue.equals(list.get(1)))
+				count++;
+			if (ruleKey.equals("name") && ruleValue.equals(list.get(2)))
+				count++;
+		}
+		return count;
+	}
+
+	//Bruteforce approach
+	public static int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+		int count = 0;
 		switch (ruleKey) {
 		case "type":
 			count = checkByType(items, ruleValue, count);
