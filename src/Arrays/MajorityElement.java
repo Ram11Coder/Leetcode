@@ -1,14 +1,15 @@
 package Arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class MajorityElement {
 	public static void main(String[] args) {
 		System.out.println(majorityElementWithHashMap(new int[] { 2, 2, 1, 1, 2 }));
 		System.out.println(majorityElement(new int[] { 2, 2, 1, 1, 2 }));
+		System.out.println(majorityElementWithSort(new int[] { 2, 2, 1, 1, 2 }));
 	}
 
 	
@@ -34,7 +35,7 @@ public class MajorityElement {
 		return majority;
 	}
 	
-	public static int majorityElement(int[] nums) {
+	public static int majorityElementWithKeySet(int[] nums) {
 		int majority = 0, size = nums.length / 2;
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i : nums) {
@@ -54,5 +55,37 @@ public class MajorityElement {
 
 		return majority;
 	}
+	
+	 public static int majorityElementWithSort(int[] nums) {
+	        Arrays.sort(nums);
+		  int len = nums.length;
+		  //int mid = 0 + (nums.length - 1 - 0) / 2;
+		  return nums[len/2];
+	 }
+
+	 
+	// Moore voting algorithm 
+	 public static int majorityElement(int[] num) {
+
+	        int major=num[0], count = 1;
+	        for(int i=1; i<num.length;i++){
+	            if(count==0){
+	                count++;
+	                major=num[i];
+	            }else if(major==num[i]){
+	                count++;
+	            }else count--;
+	            
+	        }
+	        return major;
+	    }
+
+		/*
+		 * public int majorityElement3(int[] nums) { int count=0, ret = 0; for (int num:
+		 * nums) { if (count==0) ret = num; if (num!=ret) count--; else count++; }
+		 * return ret; }
+		 */
+
+
 
 }
