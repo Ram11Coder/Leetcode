@@ -9,7 +9,15 @@ public class MaxProfit {
 
 		System.out.println(bruteforce(new int[] { 7, 1, 5, 3, 6, 4 }));
 		System.out.println(bruteforce(new int[] { 7, 6, 4, 3, 1 }));
-		System.out.println(bruteforce(new int[] { 2, 4 ,1}));
+		System.out.println(bruteforce(new int[] { 2, 4, 1 }));
+		
+		System.out.println();
+
+		System.out.println(maxProfit_Improved(new int[] { 7, 1, 5, 3, 6, 4 }));
+		System.out.println(maxProfit_Improved(new int[] { 7, 6, 4, 3, 1 }));
+		System.out.println(maxProfit_Improved(new int[] { 2, 4, 1 }));
+		
+		
 	}
 
 	public static int bruteforce(int[] prices) {
@@ -26,37 +34,27 @@ public class MaxProfit {
 	}
 
 	public static int maxProfit(int[] prices) {
-		/*
-		 * int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE, minIndex, maxIndex;
-		 * 
-		 * for (int i = 0; i < prices.length; i++) { if (max < prices[i]) { max =
-		 * prices[i]; maxIndex = i; } else { min = prices[i]; minIndex = i; } }
-		 */
-		/*
-		 * if(minIndex<maxIndex) {
-		 * 
-		 * }
-		 */
-		int i = 0, j = prices.length - 1, max_value = 0;
-		while (i < j) {
-			int priceValue = prices[j] - prices[i];
-			if (priceValue > max_value) {
-				max_value = priceValue;
-	
-			}
-			
-			if (prices[i] > prices[i + 1]) {
-				i++;
-			}else
-				j--;
+		int sell = 0, buy = Integer.MAX_VALUE, profit = 0;
 
-			if (prices[j - 1] > prices[j]) {
-				j--;
-			}else
-				i++;
+		for (int i = 0; i < prices.length; i++) {
+			if (prices[i] < buy)
+				buy = prices[i];
+			sell = prices[i] - buy;
+			if (profit < sell)
+				profit = sell;
 		}
 
-		return max_value;
+		return profit;
+	}
 
+	public static int maxProfit_Improved(int[] prices) {
+		int sell = 0, buy = Integer.MAX_VALUE, profit = 0;
+
+		for (int i = 0; i < prices.length; i++) {
+			buy = Math.min(prices[i], buy);
+			sell = prices[i] - buy;
+			profit = Math.max(profit, sell);
+		}
+		return profit;
 	}
 }
