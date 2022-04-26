@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
+//https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 public class KidsWithCandies {
 	public static void main(String[] args) {
 		System.out.println(kidsWithCandies(new int[] { 2, 3, 5, 1, 3 }, 3));
