@@ -24,9 +24,29 @@ Solving Leetcode problems
 - SumZero
 
 ### Maths
+- IsPowerOfFour
+- MySqrt
+- Palindrome
+- Reverse
+- SubtractProductAndSum
 
 ### Matrix
+- DiagonalSum
+- FlipAndInvertImage
 
 ### Recursion
+- Reverse
 
 ### Strings
+- AddBinary
+- ArrayStringsAreEqual
+- CountMatches
+- FinalValueAfterOperations
+- IsPalindrome
+- JewelsandStones
+- LengthOfLastWord
+- MostWordsFound
+- MyAtoi
+- Panagram
+- ReplaceDigits
+- StrStr
