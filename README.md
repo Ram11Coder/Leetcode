@@ -22,7 +22,8 @@ Solving Leetcode problems
 - SingleNumber
 - SmallerNumbersThanCurrent
 - SumZero
-
+- MoveZeroes
+- MissingNumber
 ### Maths
 - IsPowerOfFour
 - MySqrt
