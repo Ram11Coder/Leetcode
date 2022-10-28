@@ -35,4 +35,8 @@ public class FirstUniqueCharacterInAString {
 		}
 		return -1;
 	}
+	
+	/**
+	 * Can we solve the provlem with one for lop
+	 */
 }
