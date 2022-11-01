@@ -19,15 +19,12 @@ public class PowerOfThree {
 	}
 
 	public static boolean isPowerOfThree(int n) {
-		if (n < 3 || n % 3 != 0)
-			return false;
-
-		while (n > 3) {
-			n /= 3;
+		while (n >= 3) {
 			if (n % 3 != 0)
 				return false;
+			n /= 3;
 		}
-		return true;
+		return n == 1;
 	}
 
 	public static boolean isPowerOfThree_optimal1(int n) {
@@ -37,4 +34,13 @@ public class PowerOfThree {
 		return false;
 	}
 
+	public static boolean isPowerOfThree_optimal2(int n) {
+		return (Math.log10(n) / Math.log10(3)) % 1 == 0;
+	}
+
+	public static boolean isPowerOfThree_optimal3(int n) {
+		// 3^19 =1162261467,
+		// 3^20 is exceding Integer_Range So 3^19 is the highest power in Integer Rang
+		return (n > 0 && 1162261467 % n == 0);
+	}
 }
